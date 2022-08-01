@@ -53,12 +53,12 @@
         "groups": [
           "/^react/",
           "module",
-          "/^@/app/domain/",
-          "/^@/app/data/",
-          "/^@/app/infra/",
-          "/^@/app/main/",
-          "/^@/app/validation/",
-          "/^@/app/presentation/",
+          "/^@/domain/",
+          "/^@/data/",
+          "/^@/infra/",
+          "/^@/main/",
+          "/^@/validation/",
+          "/^@/presentation/",
           ["parent", "sibling", "index"]
         ],
         "alphabetize": { "order": "asc", "ignoreCase": false }
