@@ -6,13 +6,17 @@ import { ListPokemon } from '@/domain/useCases'
 export class RemoteListPokemon implements ListPokemon {
   constructor(
     private readonly url: string,
-    private readonly httpClient: HttpClient<RemoteListPokemon.Response>
+    private readonly httpClient: HttpClient<RemoteListPokemon.Response>,
+    private readonly limit: number
   ) {}
 
   public async load(): Promise<RemoteListPokemon.Result> {
     const response = await this.httpClient.request({
       url: this.url,
-      method: 'get'
+      method: 'get',
+      params: {
+        limit: this.limit
+      }
     })
 
     const body = response.body.results.map<Pokemon>((pokemon) => {
