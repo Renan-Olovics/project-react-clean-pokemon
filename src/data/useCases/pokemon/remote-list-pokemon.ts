@@ -14,9 +14,7 @@ export class RemoteListPokemon implements ListPokemon {
     const response = await this.httpClient.request({
       url: this.url,
       method: 'get',
-      params: {
-        limit: this.limit
-      }
+      params: { limit: this.limit }
     })
 
     const body = response.body.results.map<Pokemon>((pokemon) => ({
