@@ -19,12 +19,10 @@ export class RemoteListPokemon implements ListPokemon {
       }
     })
 
-    const body = response.body.results.map<Pokemon>((pokemon) => {
-      return {
-        name: pokemon.name,
-        id: pokemon.url.split('/')[6]
-      }
-    })
+    const body = response.body.results.map<Pokemon>((pokemon) => ({
+      name: pokemon.name,
+      id: pokemon.url.split('/')[6]
+    }))
 
     return responseHandler({ body, status: response.status })
   }
