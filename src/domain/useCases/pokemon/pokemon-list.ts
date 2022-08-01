@@ -1,9 +1,9 @@
 import { Pokemon } from '@/domain/models/pokemon'
 
-export interface PokemonList {
-  load: () => Promise<PokemonList.Result[]>
+export interface ListPokemon {
+  load: () => Promise<ListPokemon.Result>
 }
 
-export namespace PokemonList {
+export namespace ListPokemon {
   export type Result = Pokemon[]
 }
