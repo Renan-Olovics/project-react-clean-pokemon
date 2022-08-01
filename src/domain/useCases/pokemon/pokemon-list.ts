@@ -1,7 +1,7 @@
 import { Pokemon } from '@/domain/models/pokemon'
 
 export interface ListPokemon {
-  load: () => Promise<ListPokemon.Result>
+  load: (limit: number) => Promise<ListPokemon.Result>
 }
 
 export namespace ListPokemon {
